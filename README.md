@@ -12,5 +12,5 @@ _client.new_function("func", (e) => {
 
 Server Side Js
 ```js
-   Meteor.call("call_client", client-id, "func", ["data", "data"]);
+   Meteor.call("call_client", client_id, "func", ["data", "data"]);
 ```
