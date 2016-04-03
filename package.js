@@ -1,28 +1,27 @@
 Package.describe({
   name: 'q1s:server-to-client',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'A simple server to client call that uses subscriptions.',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/tyler-r-smith/server-to-client',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.3-rc.13');
+  api.versionsFrom('1.3');
   api.use('ecmascript');
   api.use("random");
   api.use("mongo");
   api.export("ClientFromServer", ['client']);
   api.export("call_client", ['server']);
-  api.mainModule('server-to-client.js');
 });
 
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('server-to-client');
+  api.use('q1s:server-to-client');
   api.mainModule('server-to-client-tests.js');
 });
